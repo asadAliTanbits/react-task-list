@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import { useState, useEffect } from "react";
@@ -81,8 +81,7 @@ function App() {
   };
 
   return (
-    <Router>
-      
+
       <div className="container">
         <Header
           onAdd={() => setShowAddTask(!showAddTask)}
@@ -98,10 +97,14 @@ function App() {
               ) : (
                 "No Tasks"
               )}
+
+      <Routes>      
+
+      <Route path="/about" element={<About/>} />
+      </Routes>
        
         <Footer />
       </div> 
-    </Router>
   );
 }
 
